@@ -1,4 +1,3 @@
-
 const DATABASE_NAME = process.env.SQL_DBNAME;
 
 var options = {
