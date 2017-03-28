@@ -1,8 +1,6 @@
-const DATABASE_NAME = process.env.SQL_DBNAME;
-
 var options = {
   encrypt: true,
-  database: DATABASE_NAME,
+  database: process.env.SQL_DBNAME,
 }
 
 var debugOptions = {

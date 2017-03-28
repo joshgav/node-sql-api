@@ -1,17 +1,18 @@
-var sql = require('../sql');
+const sql = require('../sql');
 
-function getAll (req, res) {
-  const SCHEMA = 'SalesLT';
-  const TABLE  = 'Customer';
-  const SQL    = `SELECT * FROM ${SCHEMA}.${TABLE}`;
+const SCHEMA = 'SalesLT';
+const TABLE_CUSTOMER  = 'Customer';
+
+function getAll (request, response) {
+  const SQL_STMT = `SELECT * FROM ${SCHEMA}.${TABLE_CUSTOMER}`;
 
   sql.connection().then((connection) => {
-    connection.sendQuery(SQL).then((records) => {
-      res.status(200).send(records);
+    connection.sendQuery(SQL_STMT).then((records) => {
+      response.status(200).send(records);
     });
   });
 }
 
 exports = module.exports = {
   getAll
-};
+}
